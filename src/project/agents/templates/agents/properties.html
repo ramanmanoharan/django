@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block body %}
   <!-- END: header -->
  <section class="probootstrap-slider flexslider2 page-inner">
@@ -20,10 +20,10 @@
         </div>
       </div>
     </div>
-    <ul class="slides">
-      <li style="background-image: url(img/slider_1.jpg);"></li>
-      <li style="background-image: url(img/slider_4.jpg);"></li>
-      <li style="background-image: url(img/slider_2.jpg);"></li>
+     <ul class="slides">
+      <li style="background-image: url({% static 'slider/slide1.jpg' %});" class="overlay"></li>
+      <li style="background-image: url({% static 'slider/slide2.png' %});" class="overlay"></li>
+      <li style="background-image: url({% static 'slider/slide3.jpg' %});" class="overlay"></li>
     </ul>
   </section>
   <!-- END: slider  -->

@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block body %}
   <!-- END: header -->
   <section class="probootstrap-slider flexslider2 page-inner">
@@ -20,10 +20,10 @@
         </div>
       </div>
     </div>
-    <ul class="slides">
-      <li style="background-image: url(img/slider_1.jpg);"></li>
-      <li style="background-image: url(img/slider_4.jpg);"></li>
-      <li style="background-image: url(img/slider_2.jpg);"></li>
+     <ul class="slides">
+      <li style="background-image: url({% static 'slider/slide1.jpg' %});" class="overlay"></li>
+      <li style="background-image: url({% static 'slider/slide2.png' %});" class="overlay"></li>
+      <li style="background-image: url({% static 'slider/slide3.jpg' %});" class="overlay"></li>
     </ul>
   </section>
   <!-- END: slider  -->
@@ -43,7 +43,7 @@
             <div class="probootstrap-card-text">
               <h2 class="probootstrap-card-heading"><a href="{% url 'property:property_detail' property.id %}">{{ property }}</a></h2>
               <div class="probootstrap-listing-location">
-                <i class="icon-location2"></i> <span>360 W Wellington Chicago, IL 60657</span>
+                <i class="icon-location2"></i> <span>{{property.location}}</span>
               </div>
               <div class="probootstrap-listing-category for-sale"><span>for {{property.property_type}}</span></div>
               <div class="probootstrap-listing-price"><strong>$ {{property.price}}</strong> / month</div>

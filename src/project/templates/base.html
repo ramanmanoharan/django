@@ -1,10 +1,11 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Django Booking &mdash; Hotel Booking</title>
+    <title>Django &mdash; Hotel Booking</title>
     <meta name="description" content="Free Bootstrap Theme by uicookies.com">
     <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
     
@@ -26,23 +27,23 @@
 
   <header role="banner" class="probootstrap-header">
     <div class="container">
-        <a href="index.html" class="probootstrap-logo">Raman<span>.Django</span></a>
+        <a href="{% url 'home:home' %}" class="probootstrap-logo">Raman <span> Django </span></a>
         
         <a href="#" class="probootstrap-burger-menu visible-xs" ><i>Menu</i></a>
         <div class="mobile-menu-overlay"></div>
 
         <nav role="navigation" class="probootstrap-nav hidden-xs">
           <ul class="probootstrap-main-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="properties.html">Properties</a></li>
-            <li><a href="agents.html">Agents</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li {% if category_list_home %}class="active"{% endif %}><a href="{% url 'home:home' %}">Home</a></li>
+            <li {% if property_list %}class="active"{% endif %}><a href="{% url 'property:property_list' %}">Properties</a></li>
+            <li {% if agents_list %}class="active"{% endif %}><a href="{% url 'agents:agent_list' %}">Agents</a></li>
+            <li {% if about %}class="active"{% endif %}><a href="{% url 'about:aboutus' %}">About</a></li>
+            <li {% if contactdetailst %}class="active"{% endif %}><a href="{% url 'contact:send_email' %}">Contact</a></li>
           </ul>
           <div class="extra-text visible-xs"> 
             <a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>
             <h5>Address</h5>
-            <p>198 West 21th Street, Suite 721 New York NY 10016</p>
+            <p>49/29 Big Street, Sathuvachari, Vellore-632009</p>
             <h5>Connect</h5>
             <ul class="social-buttons">
               <li><a href="#"><i class="icon-twitter"></i></a></li>
